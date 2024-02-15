@@ -1,33 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import Categories from './components/Categories'
+import './styles/main.scss'
+import Layout from './components/Layout'
+import Category from './components/Category'
+import CategoryIndex from './components/CategoriesIndex'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <Layout>
+       
+        <Routes> {/* Everyhting that comes under Routes are several routes */}
+          <Route index element={<Home/>}/> {/* index: referes that this is a index/main page, like index.html | element: decieds which component will be renderd*/}
+          <Route path="categories/*" element={<Categories />}> {/* Here we have path instead of index, cuz here we chose where the page is, also gives it a path to be redirected to when using <Link> */}
+            <Route index element={<CategoryIndex/>}/>
+            <Route path=':slug' element={<Category />} />
+          </Route>
+        </Routes>
+      </Layout>
     </>
   )
 }
