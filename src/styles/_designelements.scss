@@ -1,0 +1,21 @@
+.category-list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    li {
+        a{
+            padding: .5rem;
+            text-decoration: none;
+            color: #fff;
+            border: solid;
+            border-radius: .3rem;
+            
+            &:hover{
+                color: #000;
+                background-color: #fff;
+            }
+        }
+    }
+}

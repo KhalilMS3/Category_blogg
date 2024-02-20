@@ -1,5 +1,7 @@
-$blueColor: #242424;
+@import 'layout'; // import of partial _layout.scss - no need to have "_" underscore before partial name
+@import 'designelements';
+$bgColor:  #242424;
 
-h1{
-    background-color: $blueColor;
+body{
+    background-color: $bgColor;
 }
