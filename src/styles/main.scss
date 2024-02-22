@@ -1,7 +1,21 @@
 @import 'layout'; // import of partial _layout.scss - no need to have "_" underscore before partial name
 @import 'designelements';
+@import 'postpage';
 $bgColor:  #242424;
 
 body{
     background-color: $bgColor;
+    article{
+        .status-box{
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+        }
+        .Alive{
+            background-color: green;
+        }
+        .Dead{
+            background-color: rgb(188, 0, 0);
+        }
+    }
 }

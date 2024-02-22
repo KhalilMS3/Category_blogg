@@ -1,0 +1,38 @@
+.post-content{
+    text-align: left;
+    h1{
+        border-bottom: solid lightgray;
+        padding: 0.2rem;
+    }
+
+    section{
+        background-color: rgb(67, 67, 67);
+        padding: .5rem;
+        form{
+            textarea{
+                width: 100%;
+                margin-bottom: 1rem;
+                border: none;
+                min-height: 150px;
+                
+            }
+            button{
+                background-color: #fff;
+                color: #242424;
+                margin-bottom: .5rem;
+                border: none;
+                padding: 7px 15px;
+                font-size: 19px;
+                font-weight: 500px;
+                border-radius: 2px;
+                
+            }
+            
+        }
+            article{
+            border-top: 1px solid #5f5f5f;
+            padding-top: .5rem;
+        }
+
+    }
+}
