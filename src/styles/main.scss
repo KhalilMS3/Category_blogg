@@ -5,17 +5,29 @@ $bgColor:  #242424;
 
 body{
     background-color: $bgColor;
-    article{
-        .status-box{
-            height: 30px;
-            width: 30px;
-            display: inline-block;
-        }
-        .Alive{
-            background-color: green;
-        }
-        .Dead{
-            background-color: rgb(188, 0, 0);
+    .characters-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        
+        article{
+            background-color: #5f5f5f;
+            color: #fff;
+            border-radius: 1rem;
+
+            .status-box{
+                height: 300px;
+                width: 10px;
+                display: inline-block;
+                
+            }
+            .Alive{
+                background-color: green;
+            }
+            .Dead{
+                background-color: rgb(188, 0, 0);
+            }
         }
     }
 }
