@@ -3,8 +3,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
+    
     li {
+        margin-bottom: .5rem;
         a{
             padding: .5rem;
             text-decoration: none;
