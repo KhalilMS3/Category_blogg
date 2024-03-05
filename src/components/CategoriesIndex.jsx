@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-export default function CategoryIndex({content, setQuery}){
-    console.log(content)
+export default function CategoryIndex({content, setQuery, setCurrentId}){
+    
     const[search, setSearch] = useState("")
+    
+
     const handleSubmit = (e)=>{
         e.preventDefault() // avoides page refresh on submit
         setQuery(search)
@@ -12,7 +14,11 @@ export default function CategoryIndex({content, setQuery}){
         // whatever the user writes inside the input field (#search) will be retrived
         setSearch(event.target.value) // retrives the value of the target
     }
-    console.log("Search", search)
+
+    const handleClick = (id)=> {
+        setCurrentId(id)
+    }
+    console.log("Search", content)
     return(
         <>
             <h1>Characters</h1>
@@ -23,7 +29,10 @@ export default function CategoryIndex({content, setQuery}){
             </form>
             <ul className="category-list">
                 {
-                    content?.map(item => <li key={item.id}><Link to={item.name}>{item.name}</Link></li>)
+                    content?.map(item => 
+                    <li key={item.id}>
+                       <Link to={item.name} onClick={()=> handleClick(item.id)}>{item.name}</Link>
+                    </li>)
 
                 }
             </ul>

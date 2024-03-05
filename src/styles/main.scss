@@ -12,7 +12,7 @@ body{
         gap: 1rem;
         
         article{
-            background-color: #5f5f5f;
+            background-color: #2eb9f960;
             color: #fff;
             border-radius: .5rem;
             img{
@@ -22,15 +22,19 @@ body{
                 height: 300px;
                 width: 10px;
                 display: inline-block;
+                border-radius: 0 .5rem 0 0;
                 
                 
             }
             .Alive {
-                background-color: green;
+                background-color: rgb(7, 174, 7);
+
             }
             .Dead{
                 background-color: rgb(188, 0, 0);
+
             }
+           
         }
     }
 }

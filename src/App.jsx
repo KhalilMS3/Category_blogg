@@ -15,6 +15,9 @@ function App() {
   
   const[content, setContent] = useState([])
   const[query, setQuery] = useState("")
+  const[currentId, setCurrentId] = useState(null)
+
+
   const getData = async()=>{
     try{
       const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${query}`)
@@ -23,7 +26,6 @@ function App() {
       }catch{
         console.error("Det har skjedd en feil")
       }
-    
   }
 
   /* ALWAYS check your useEffect if the content of your page is not updated, 
@@ -33,7 +35,7 @@ function App() {
     getData()
   },[query])
 
-  console.log("Query", query)
+  console.log("ID", currentId)
 
   return (
     <>
@@ -43,8 +45,8 @@ function App() {
           <Route index element={<Home content={content}/>}>
             </Route> {/* index: referes that this is a index/main page, like index.html | element: decieds which component will be renderd*/}
           <Route path="characters/*" element={<Categories />}> {/* Here we have path instead of index, cuz here we chose where the page is, also gives it a path to be redirected to when using <Link> */}
-            <Route index element={<CategoryIndex content={content} setQuery={setQuery}/>}/>
-            <Route path=':slug' element={<Category posts={posts} />} />
+            <Route index element={<CategoryIndex content={content} setQuery={setQuery}setCurrentId={setCurrentId}/>}/>
+            <Route path=':slug' element={<Category posts={posts} currentId={currentId}/>} />
             <Route path=':slug/:postid' element={<PostPage posts={posts} />} />
           </Route>
         </Routes>
